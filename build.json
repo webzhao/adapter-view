@@ -1,13 +1,13 @@
 {
-    "adapter-view": {
+    "adapterView": {
         "version": "1.0.0",
         "files" : {
-            "build/adapter-view.js" : [
-                "src/adapter-view.js"
+            "build/adapterView.js" : [
+                "src/adapterView.js"
             ]
         },
-        "module": "adapter-view",
-        "src": "src/adapter-view.js",
+        "module": "adapterView",
+        "src": "src/adapterView.js",
         "requires": {
             "widget": "module/widget/1.0.0/widget",
             "_handlebars": "module/handlebars/1.0.0/handlebars"
