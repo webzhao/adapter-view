@@ -1,0 +1,16 @@
+{
+    "adapter-view": {
+        "version": "1.0.0",
+        "files" : {
+            "build/adapter-view.js" : [
+                "src/adapter-view.js"
+            ]
+        },
+        "module": "adapter-view",
+        "src": "src/adapter-view.js",
+        "requires": {
+            "widget": "module/widget/1.0.0/widget",
+            "_handlebars": "module/handlebars/1.0.0/handlebars"
+        }
+    }
+}
