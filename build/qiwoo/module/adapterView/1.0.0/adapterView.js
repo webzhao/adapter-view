@@ -1,5 +1,5 @@
 (function(define, global) { 
-define(['module/module/widget/1.0.0/widget','module/module/handlebars/1.0.0/handlebars'], function(Widget,_handlebars) {
+define(['module/widget/1.0.0/widget','module/handlebars/1.0.0/handlebars'], function(Widget,_handlebars) {
 Widget = Widget || this.Widget;
 _handlebars = _handlebars || this._handlebars;
 
@@ -15,7 +15,8 @@ _handlebars = _handlebars || this._handlebars;
                 url: '',                // 数据API地址
                 method: 'get',          // 数据请求方式
                 params: {},             // 请求数据时的参数
-                type: 'json'            // 接口类型，json/jsonp
+                type: 'json',           // 接口类型，json/jsonp
+                noCache: '_t'           // 通过加随机值防止GET请求缓存
             },
             // 视图配置
             view: {
@@ -46,9 +47,12 @@ _handlebars = _handlebars || this._handlebars;
                 method = adapterView.get('adapter.method').toLowerCase(),
                 url = adapterView.get('adapter.url'),
                 type = adapterView.get('adapter.type'),
+                noCache = adapterView.get('adapter.noCache'),
                 params = adapterView.get('adapter.params');
             if (method == 'post') {
                 params = JSON.stringify(params);
+            } else if (noCache) {
+                params[noCache] = Math.random();
             }
             $.ajax({
                 method: method,

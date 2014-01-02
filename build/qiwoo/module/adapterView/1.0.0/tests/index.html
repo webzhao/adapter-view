@@ -28,7 +28,8 @@
         var view1 = new AdapterView({
             adapter: {
                 url: 'a.json',
-                method: 'get'
+                method: 'get',
+                noCache: '__t'
             },
             element: '#view1',
             filter: function(data) {
