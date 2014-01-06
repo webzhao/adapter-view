@@ -1,5 +1,12 @@
-(function(define, global) { 
-define(['module/widget/1.0.0/widget','module/handlebars/1.0.0/handlebars'], function(Widget,_handlebars) {
+(function(root, factory) {
+if(typeof exports === 'object') {
+module.exports = factory();
+} else if(typeof define === 'function' && define.amd) {
+define(['module/module/widget/1.0.1/widget','module/module/handlebars/1.0.0/handlebars'], factory);
+} else {
+root['AdapterView'] = factory();
+}
+})(this, function(Widget,_handlebars) {
 Widget = Widget || this.Widget;
 _handlebars = _handlebars || this._handlebars;
 
@@ -119,5 +126,4 @@ _handlebars = _handlebars || this._handlebars;
 
     });
     return AdapterView;
-}); 
-}) ( typeof define === 'function' && define.amd ? define : function (name, requires, factory) { if(typeof name === 'function') { factory = name; } else if(typeof requires === 'function') { factory = requires; } if(typeof module != 'undefined'){ module.exports = factory(require); }else if(typeof window != 'undefined'){ window.AdapterView= factory(); } }, this);
+});

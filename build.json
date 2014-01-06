@@ -9,7 +9,7 @@
         "module": "adapterView",
         "src": "src/adapterView.js",
         "requires": {
-            "widget": "module/widget/1.0.0/widget",
+            "widget": "module/widget/1.0.1/widget",
             "_handlebars": "module/handlebars/1.0.0/handlebars"
         }
     }
